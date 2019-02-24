@@ -112,6 +112,30 @@ $(document).ready(function () {
 
 
     })
+
+    // Delete Albums from Page
+
+    const deleteAlbum = (data) => {
+        console.log("this is new data ", data);
+        $("#albumStack").empty();
+    }
+
+    $("#albumCardTarget").on("click",(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("Targeted");
+
+        $.ajax({
+            method: "DELETE",
+            url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/5c72fd3dfe78139a8f10cca7}`,
+            success: deleteAlbum,
+            error: err => console.log(err)
+                })
+            
+            console.log(albumList);
+
+    })
+    )
     
 
     const createNewAlbum = json => {
@@ -127,28 +151,7 @@ $(document).ready(function () {
 
     }
     //  Render the new album
-    const render = (newAlbumName, newAlbumArtist, newAlbumid) => {
-        let htmlFragment = `
-            <div class="col" id="albumStack" data-userId="${newAlbumid}">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/Purple-rain-cover.1.jpg"   class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${ newAlbumName }</h5>
-                        <p class="card-text">${ newAlbumArtist }</p>
-                        <button id="deleteButton" class="btn-danger"> Delete </delete>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        // appending th html in the div
-        $('#albumCardTarget').append(htmlFragment);
-
-    };
-    //  Get all album
-    const getAllTheAlbum = (album) => {
-        return
-    }
+    
     // // Do an Ajax call  to create new album
     // $('#inputSubmit').on('submit', function (e) {
     //     e.preventDefault();
