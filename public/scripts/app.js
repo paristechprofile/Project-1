@@ -1,31 +1,9 @@
-// google signIn 
-// function onSignIn(googleUser) {
-//     var profile = googleUser.getBasicProfile();
-//     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-//     console.log('Name: ' + profile.getName());
-//     console.log('Image URL: ' + profile.getImageUrl());
-//     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-// }
-
-
-// // google signout function
-// function signOut() {
-//     var auth2 = gapi.auth2.getAuthInstance();
-//     auth2.signOut().then(function () {
-//         console.log('User signed out.');
-//     });
-// }
-
-
-// get the album
 $(document).ready(function () {
-    //  Set the user globally
-    // Se the user's id globally;
+
     let albumList = []
 
-
-
     const newAlbum = dbUser => {
+        
         console.log("dbUser", dbUser);
 
         albumList = dbUser.albums;
@@ -40,7 +18,7 @@ $(document).ready(function () {
         console.log(albumPic)
         let htmlFragment = `
             <div class="col" id="albumStack" data-userId="${userId}">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;" >
                     <img src="${albumPic}"   class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ albumName }</h5>
@@ -50,29 +28,29 @@ $(document).ready(function () {
                 </div>
             </div>
         `;
+
+        const deleteAlbum = (data) => {
+            console.log("this is new data ", data);
+            $("#albumStack").empty();
+        }
+
         // appending th html in the div
         $('#albumCardTarget').append(htmlFragment);
 
         console.log($("#deleteButton"))
 
         // Add an Event Listener and 
-        $("#deleteButton").on('click', function (e) {
-            e.preventDefault()
-            console.log("which event is firing 1")
-            // Ajax callf or single user
-            $.ajax({
-                method: "DELETE",
-                url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").attr('data-userId')}`,
-                success: deleteAlbum,
-                error: err => console.log(err)
-            })
-        })
-        console.log(albumList);
-
-        const deleteAlbum = (data) => {
-            console.log("this is new data ", data);
-            $(".card").empty();
-        }
+        // $(".btn-danger").click(function (e) {
+        //     console.log("which event is firing 1")
+        //     // Ajax callf or single user
+        //     $.ajax({
+        //         method: "DELETE",
+        //         url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/${$("#albumStack").data('userId')}`,
+        //         success: deleteAlbum,
+        //         error: err => console.log(err)
+        //     })
+        // })
+        // console.log(albumList);
 
     };
 
@@ -103,32 +81,13 @@ $(document).ready(function () {
         `;
             // appending th html in the div
             $('#albumCardTarget').append(htmlFragment);
-
-            console.log($("#deleteButton"))
-
-            // Add an Event Listener and 
-            $("#deleteButton").on('click', function (e) {
-                // Ajax callf or single user
-                $.ajax({
-                    method: "DELETE",
-                    url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").data('userId')}`,
-                    success: deleteAlbum,
-                    error: err => console.log(err)
-                })
-            })
-            console.log(albumList);
-
-            const deleteAlbum = (data) => {
-                console.log("this is new data ", data);
-                $(".card").empty();
             }
         }
-    }
 
     //   Make an Ajax call to get user by id
     $.ajax({
         method: "GET",
-        url: "/api/user/5c72fda2715ccb1ec782682c",
+        url: "/api/user/5c72fd3dfe78139a8f10ccb5",
         success: findAlbumById,
         error: err => console.log(err)
     })
@@ -142,7 +101,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'POST',
-            url: '/api/user/5c72fda2715ccb1ec782682c/albums',
+            url: '/api/user/5c72fd3dfe78139a8f10ccb5/albums',
             data: formData,
             success: createNewAlbum,
             error: error => console.log(error),
@@ -153,12 +112,7 @@ $(document).ready(function () {
 
 
     })
-    // // Find the id of the user by id
-    // const findUserId = id => {
-    //     console.log(`This is new user ${id}`)
-    // }
-
-    // TODO:  create new ablum. Display in the front end
+    
 
     const createNewAlbum = json => {
         console.log(json)
@@ -186,16 +140,6 @@ $(document).ready(function () {
                 </div>
             </div>
         `;
-        $("#deleteButton").on('click', function (e) {
-            console.log("which event is firing 3")
-            // Ajax callf or single user
-            $.ajax({
-                method: "DELETE",
-                url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").data('userId')}`,
-                success: deleteAlbum,
-                error: err => console.log(err)
-            })
-        })
 
         // appending th html in the div
         $('#albumCardTarget').append(htmlFragment);
@@ -213,7 +157,3 @@ $(document).ready(function () {
 
 })
 
-
-
-// TODO: DELETE ALBUM, EDIT USER INFO, CREATE ALBUM
-// TODO: BACKEND INTEGRATION ROUTES,
