@@ -111,3 +111,9 @@ We will hold 1:1s throughout the week. We will also do mini lessons on certain t
 </details>
 
 
+<!-- NOTES -->
+        <!-- google onSign section -->
+        <div class="g-signin2" data-onsuccess="onSignIn">SignIn</div>
+        <!-- onclick signout -->
+        <a href="#" onclick="signOut();">Sign out</a>
+        <!--  -->

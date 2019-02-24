@@ -45,7 +45,6 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h5 class="card-title">${ albumName }</h5>
                         <p class="card-text">${ artistName }</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                         <button id="deleteButton" class="btn-danger"> Delete </delete>
                     </div>
                 </div>
@@ -63,7 +62,7 @@ $(document).ready(function () {
             // Ajax callf or single user
             $.ajax({
                 method: "DELETE",
-                url: `/api/user/5c7080e8d951ac91a129cf45/albums/${$("#albumStack").attr('data-userId')}`,
+                url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").attr('data-userId')}`,
                 success: deleteAlbum,
                 error: err => console.log(err)
             })
@@ -97,7 +96,6 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h5 class="card-title">${ albumName }</h5>
                         <p class="card-text">${ artistName }</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                         <button id="deleteButton" class="btn-danger"> Delete </delete>
                     </div>
                 </div>
@@ -113,7 +111,7 @@ $(document).ready(function () {
                 // Ajax callf or single user
                 $.ajax({
                     method: "DELETE",
-                    url: `/api/user/5c7080e8d951ac91a129cf45/albums/${$("#albumStack").data('userId')}`,
+                    url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").data('userId')}`,
                     success: deleteAlbum,
                     error: err => console.log(err)
                 })
@@ -130,7 +128,7 @@ $(document).ready(function () {
     //   Make an Ajax call to get user by id
     $.ajax({
         method: "GET",
-        url: "/api/user/5c7080e8d951ac91a129cf45",
+        url: "/api/user/5c72fda2715ccb1ec782682c",
         success: findAlbumById,
         error: err => console.log(err)
     })
@@ -144,7 +142,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'POST',
-            url: '/api/user/5c7080e8d951ac91a129cf45/albums',
+            url: '/api/user/5c72fda2715ccb1ec782682c/albums',
             data: formData,
             success: createNewAlbum,
             error: error => console.log(error),
@@ -183,7 +181,6 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h5 class="card-title">${ newAlbumName }</h5>
                         <p class="card-text">${ newAlbumArtist }</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                         <button id="deleteButton" class="btn-danger"> Delete </delete>
                     </div>
                 </div>
@@ -194,7 +191,7 @@ $(document).ready(function () {
             // Ajax callf or single user
             $.ajax({
                 method: "DELETE",
-                url: `/api/user/5c7080e8d951ac91a129cf45/albums/${$("#albumStack").data('userId')}`,
+                url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").data('userId')}`,
                 success: deleteAlbum,
                 error: err => console.log(err)
             })
