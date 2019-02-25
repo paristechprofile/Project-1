@@ -3,14 +3,14 @@ Our team learned a lot through this project. It was very challenging for us but 
 
 - TEAM CATCHY
 
-## Links to our process:
-# Trello
+# Links to our process:
+## Trello
 https://trello.com/b/p1gQMy5C/project-1-karma-jon-paris
 
-# Balsamiq Wireframes
+## Balsamiq Wireframes
 https://balsamiq.cloud/s3btsem/pw98f1y/rC0A6
 
-# File stucture and Broad-strokes
+## File stucture and Broad-strokes
 * Process to set up a backend:
     * Set up file names
         * server.js 
