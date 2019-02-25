@@ -1,4 +1,4 @@
-### Please note:
+# Please note:
 Our team learned a lot through this project. It was very challenging for us but we were determined to put forth our best MVP. Ultimately, we decided to spend the weekend refactoring our code to create a more pleasant user experience. We are currently refactoring out AJAX calls (primarily our event listener functions) and ensuring the HTML lends itself to a simple and pleasant user experience. This Project-1 repository will be fully packaged and pushed by Tuesday at 9am. If you'd like to see our more raw take on the project, I'm happy to give you access to our original repository. Thank you for your patience while we iron out the wrinkles.
 
 - TEAM CATCHY
