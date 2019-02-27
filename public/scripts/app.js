@@ -31,24 +31,7 @@ $(document).ready(function () {
         // appending th html in the div
         $('#albumCardTarget').append(htmlFragment);
 
-<<<<<<< HEAD
-        console.log($("#deleteButton"))
-
-        // Add an Event Listener and 
-        // $(".btn-danger").click(function (e) {
-        //     console.log("which event is firing 1")
-        //     // Ajax callf or single user
-        //     $.ajax({
-        //         method: "DELETE",
-        //         url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").data('userId')}`,
-        //         success: deleteAlbum,
-        //         error: err => console.log(err)
-        //     })
-        // })
-        // console.log(albumList);
-=======
         
->>>>>>> 633cea246a400811198ef96d3a1c7798ed2344a1
 
     };
 
@@ -122,11 +105,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: "DELETE",
-<<<<<<< HEAD
-            url: `/api/user/5c72fda2715ccb1ec782682c/albums/5c72fd3dfe78139a8f10cca7}`,
-=======
             url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/${$("#albumStack").data('userId')}`,
->>>>>>> 633cea246a400811198ef96d3a1c7798ed2344a1
             success: deleteAlbum,
             error: err => console.log(err)
                 })
