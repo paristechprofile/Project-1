@@ -45,7 +45,7 @@ $(document).ready(function () {
         //     // Ajax callf or single user
         //     $.ajax({
         //         method: "DELETE",
-        //         url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/${$("#albumStack").data('userId')}`,
+        //         url: `/api/user/5c72fda2715ccb1ec782682c/albums/${$("#albumStack").data('userId')}`,
         //         success: deleteAlbum,
         //         error: err => console.log(err)
         //     })
@@ -87,7 +87,7 @@ $(document).ready(function () {
     //   Make an Ajax call to get user by id
     $.ajax({
         method: "GET",
-        url: "/api/user/5c72fd3dfe78139a8f10ccb5",
+        url: "/api/user/5c72fda2715ccb1ec782682c",
         success: findAlbumById,
         error: err => console.log(err)
     })
@@ -95,13 +95,12 @@ $(document).ready(function () {
     // Add an Event handler on the submit button
     $('#albumForm').on("submit", function (e) {
         console.log("Submit button is firing")
-        
 
         let formData = $(this).serialize();
 
         $.ajax({
             method: 'POST',
-            url: '/api/user/5c72fd3dfe78139a8f10ccb5/albums',
+            url: '/api/user/5c72fda2715ccb1ec782682c/albums',
             data: formData,
             success: createNewAlbum,
             error: error => console.log(error),
@@ -127,7 +126,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: "DELETE",
-            url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/5c72fd3dfe78139a8f10cca7}`,
+            url: `/api/user/5c72fda2715ccb1ec782682c/albums/5c72fd3dfe78139a8f10cca7}`,
             success: deleteAlbum,
             error: err => console.log(err)
                 })
