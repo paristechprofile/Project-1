@@ -20,9 +20,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/views/home.html')
+})
 
 
- app.get('/profile',(req,res)=>{
+ app.get('/userProfile',(req,res)=>{
     res.sendFile(__dirname + '/views/userProfile.html')
  })
 
