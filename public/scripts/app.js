@@ -101,8 +101,8 @@ $(document).ready(function () {
         $("#albumStack").empty();
     }
 
-    $("#albumCardTarget").on("click",(function(e){
-        console.log("Targeted");
+    $("#albumStack").on("click",(function(e){
+        
 
         $.ajax({
             method: "DELETE",
@@ -129,13 +129,6 @@ $(document).ready(function () {
         render(newAlbumName, newAlbumArtist, newAlbumid);
 
     }
-    //  Render the new album
-    
-    // // Do an Ajax call  to create new album
-    // $('#inputSubmit').on('submit', function (e) {
-    //     e.preventDefault();
-
-    // });
 
 })
 
