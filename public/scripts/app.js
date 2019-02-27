@@ -68,7 +68,7 @@ $(document).ready(function () {
     //   Make an Ajax call to get user by id
     $.ajax({
         method: "GET",
-        url: "/api/user/5c72fda2715ccb1ec782682c",
+        url: "/api/user/5c77031e86e140000c8804db",
         success: findAlbumById,
         error: err => console.log(err)
     })
@@ -81,7 +81,7 @@ $(document).ready(function () {
 
         $.ajax({
             method: 'POST',
-            url: '/api/user/5c72fda2715ccb1ec782682c/albums',
+            url: '/api/user/5c77031e86e140000c8804db/albums',
             data: formData,
             success: createNewAlbum,
             error: error => console.log(error),
