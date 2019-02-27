@@ -28,15 +28,10 @@ $(document).ready(function () {
                 </div>
             </div>
         `;
-
-        const deleteAlbum = (data) => {
-            console.log("this is new data ", data);
-            $("#albumStack").empty();
-        }
-
         // appending th html in the div
         $('#albumCardTarget').append(htmlFragment);
 
+<<<<<<< HEAD
         console.log($("#deleteButton"))
 
         // Add an Event Listener and 
@@ -51,6 +46,9 @@ $(document).ready(function () {
         //     })
         // })
         // console.log(albumList);
+=======
+        
+>>>>>>> 633cea246a400811198ef96d3a1c7798ed2344a1
 
     };
 
@@ -119,14 +117,16 @@ $(document).ready(function () {
         $("#albumStack").empty();
     }
 
-    $("#albumCardTarget").on("click",(function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        console.log("Targeted");
+    $("#albumStack").on("click",(function(e){
+        
 
         $.ajax({
             method: "DELETE",
+<<<<<<< HEAD
             url: `/api/user/5c72fda2715ccb1ec782682c/albums/5c72fd3dfe78139a8f10cca7}`,
+=======
+            url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/${$("#albumStack").data('userId')}`,
+>>>>>>> 633cea246a400811198ef96d3a1c7798ed2344a1
             success: deleteAlbum,
             error: err => console.log(err)
                 })
@@ -149,12 +149,6 @@ $(document).ready(function () {
         render(newAlbumName, newAlbumArtist, newAlbumid);
 
     }
-    //  Render the new album
-    
-    // // Do an Ajax call  to create new album
-    // $('#inputSubmit').on('submit', function (e) {
-    //     e.preventDefault();
-
-    // });
 
 })
+

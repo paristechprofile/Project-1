@@ -20,9 +20,16 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/views/home.html')
+})
 
 
+<<<<<<< HEAD
 app.get('/profile',(req,res)=>{
+=======
+ app.get('/userProfile',(req,res)=>{
+>>>>>>> 633cea246a400811198ef96d3a1c7798ed2344a1
     res.sendFile(__dirname + '/views/userProfile.html')
 })
 
