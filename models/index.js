@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds249035.mlab.com:49035/heroku_pkcmd448', { useNewUrlParser: true } );
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } );
 
 module.exports = {
     User : require('./user'),
