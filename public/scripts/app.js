@@ -17,13 +17,13 @@ $(document).ready(function () {
         console.log(userId);
         console.log(albumPic)
         let htmlFragment = `
-            <div class="col" id="albumStack" data-userId="${userId}">
+            <div class="col card-container" id="albumStack" data-userId="${userId}">
                 <div class="card" style="width: 18rem;" >
                     <img src="${albumPic}"   class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ albumName }</h5>
                         <p class="card-text">${ artistName }</p>
-                        <button id="deleteButton" class="btn-danger"> Delete </delete>
+                        <button class="btn-danger delete-button"> Delete </delete>
                     </div>
                 </div>
             </div>
@@ -49,13 +49,13 @@ $(document).ready(function () {
             let userId = albumList[i]._id;
             console.log(userId);
             let htmlFragment = `
-            <div class="col" id="albumStack" data-userId="${userId}">
+            <div class="col card-container" data-userId="${userId}">
                 <div class="card" style="width: 18rem;">
                     <img src="${albumPic}"   class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">${ albumName }</h5>
                         <p class="card-text">${ artistName }</p>
-                        <button id="deleteButton" class="btn-danger"> Delete </delete>
+                        <button class="btn-danger delete-button"> Delete </delete>
                     </div>
                 </div>
             </div>
@@ -97,25 +97,29 @@ $(document).ready(function () {
     // Delete Albums from Page
 
     const deleteAlbum = (data) => {
-        console.log("this is new data ", data);
-        $("#albumStack").empty();
+        console.log("this is new data after success ", data);
+        let $cardCollection = $('.card-container');
+
+        for(i = 0; i < $cardCollection.length; i++) {
+            if ($cardCollection[i].getAttribute('data-userid') === data) {
+                $cardCollection[i].remove()
+            }
+        }
     }
 
-    $("#albumStack").on("click",(function(e){
-        
-
+    $("#albumCardTarget").on("click", ".delete-button", function(e) {
+        e.preventDefault();
+        let dataId = this.parentElement.parentElement.parentElement.getAttribute('data-userid');
+        console.log("ID after click: " + dataId);
         $.ajax({
             method: "DELETE",
-            url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/${$("#albumStack").data('userId')}`,
+            url: `/api/user/5c72fd3dfe78139a8f10ccb5/albums/${dataId}`,
             success: deleteAlbum,
             error: err => console.log(err)
-                })
-            
-            console.log(albumList);
-
-    })
-    )
-    
+        });
+        
+        console.log(albumList);
+    });
 
     const createNewAlbum = json => {
         console.log(json)
