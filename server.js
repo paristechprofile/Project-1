@@ -78,7 +78,6 @@ app.get("/api/user/:id", (req, res) => {
             if (err) {
                 throw err;
             }
-            // console.log(users);
             res.json(user);
         })
 })
