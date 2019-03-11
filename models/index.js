@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/catchy-app', { useNewUrlParser: true } );
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } );
 
 module.exports = {
     User : require('./user'),

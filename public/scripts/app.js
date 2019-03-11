@@ -68,7 +68,7 @@ $(document).ready(function () {
     //   Make an Ajax call to get user by id
     $.ajax({
         method: "GET",
-        url: "/api/user/5c72fd3dfe78139a8f10ccb5",
+        url: "/api/user/5c77031e86e140000c8804db",
         success: findAlbumById,
         error: err => console.log(err)
     })
@@ -76,13 +76,12 @@ $(document).ready(function () {
     // Add an Event handler on the submit button
     $('#albumForm').on("submit", function (e) {
         console.log("Submit button is firing")
-        
 
         let formData = $(this).serialize();
 
         $.ajax({
             method: 'POST',
-            url: '/api/user/5c72fd3dfe78139a8f10ccb5/albums',
+            url: '/api/user/5c77031e86e140000c8804db/albums',
             data: formData,
             success: createNewAlbum,
             error: error => console.log(error),
